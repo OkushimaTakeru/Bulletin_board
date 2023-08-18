@@ -1,0 +1,513 @@
+
+/*ヘッダー*/
+header {
+    width: 100%;
+    padding: 30px 4% 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    /*background: none;*/
+    /*透明*/
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/*@*@KeyFrames test {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+h1 {
+    width: 300px;
+    height: 300px;
+    color: brown;
+    animation: test 3s;
+}
+
+*@*/
+/*h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 40px;
+            color: #4169e1;
+
+        }*/
+h1 {
+    /*文字色 */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    /*文字の縁取り */
+    text-shadow: -1px -1px 1px #87ceeb, 1px -1px 1px #000000, -1px 1px 1px #696969, 1px 1px 1px #000000;
+    z-index: 0;
+}
+
+h2 {
+    color: #fff;
+    /*margin: 0;*/
+    padding: 0;
+    font-size: 36px;
+    text-shadow: -1px -1px 1px #87ceeb, 1px -1px 1px #000000, -1px 1px 1px #696969, 1px 1px 1px #000000;
+    z-index: 0;
+}
+p {
+    /*文字色 */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    /*文字の縁取り */
+    text-shadow: -1px -1px 1px #87ceeb, 1px -1px 1px #000000, -1px 1px 1px #696969, 1px 1px 1px #000000;
+    z-index: 0;
+    text-align: center;
+}
+
+
+ul {
+    list-style: none;
+    /*margin: 0;*/
+    display: flex;
+}
+
+li {
+    margin: 0 0 0 15px;
+    font-size: 14px;
+}
+
+nav {
+    margin: 0 0 0 40%;
+}
+
+/*（入力画面）記事投稿、*/
+.flame_item dl {
+    display: flex;
+    flex-wrap: wrap;
+    /*margin-top: 0;
+            margin-bottom: 10px;*/
+}
+
+/*入力項目エリア*/
+.flame_item dt {
+    width: 35%;
+    /*padding: 20px;*/
+    background-color: #f0fff0;
+    margin: 0 0 10px 0;
+    /*項目の真ん中寄席*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*枠線*/
+    border-style: solid;
+    /*色 */
+    border-color: #f5f5f5;
+    /*角丸*/
+    border-radius: 15px;
+}
+
+/*入力エリア*/
+.flame_item dd {
+    width: 100%;
+    padding: 20px;
+    background-color: #f5fffa;
+    margin: 0 0 10px 0;
+    /*枠線*/
+    border-style: solid;
+    /*色 */
+    border-color: #f5f5f5;
+    /*角丸*/
+    border-radius: 15px;
+}
+
+/*（アカウント編集、ログイン、新規登録、記事の投稿）*/
+.Overall {
+    text-align: center;
+    margin: 40px auto;
+    width: 600px;
+    padding: 10px 60px 35px;
+    border: 1px solid #222222;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 3px 3px 10px black;
+    margin-top: 8%;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+/*記事のTOP画面*/
+.Inputtext {
+    text-align: center;
+    height: 60px;
+    line-height: 10px;
+}
+/*アカウント編集画面*/
+.account_Inputtext {
+    text-align: center;
+    height: 20px;
+    line-height: 10px;
+}
+
+a {
+    padding-top: 20px;
+    display: block;
+}
+
+/*ボタンデザイン */
+/*（ヘッダーのメニューボタン、）*/
+input[type="button"] {
+    /*background-color: #afeeee;*/
+    background-color: #ffffff;
+    color: #00bfff;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #68779a;
+    transition: 1s;
+    border: none;
+}
+
+    input[type="button"]:hover {
+        /*ボタンの影*/
+        box-shadow: 10px 5px 5px;
+        /*ボタンの動く位置*/
+        transform: translate(-4px);
+        transition: 1s;
+        border-radius: 36px;
+        color: #0000ff;
+        border: solid;
+    }
+/*アカウント編集,ログイン,新規登録*/
+input[type="submit"] {
+    /*background-color: #afeeee;*/
+    background-color: #ffffff;
+    color: #00bfff;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #68779a;
+    transition: 1s;
+    border: none;
+}
+
+    input[type="submit"]:hover {
+        /*ボタンの影*/
+        box-shadow: 10px 5px 5px;
+        /*ボタンの動く位置*/
+        transform: translate(-4px);
+        transition: 1s;
+        border-radius: 36px;
+        color: #0000ff;
+        border: solid;
+    }
+
+/*記事投稿画面のデザイン*/
+textarea {
+    resize: none;
+    max-width: initial;
+    /*テキストの幅、たかさ*/
+    width: 400px;
+    height: 200px;
+    /*テキストの枠、*/
+    border-radius: 9px;
+    padding: 2px 8px;
+}
+
+/*テキスト入力（アカウント編集、ログイン、新規登録）*/
+input {
+    /*テキストの幅、たかさ*/
+    /*max-width: initial;*/
+    width: 400px;
+    height: 30px;
+    /*テキストの枠、*/
+    border-radius: 9px;
+    border-color: #f5f5f5;
+    padding: 2px 30px;
+}
+
+/*全体背景*/
+body {
+    /*背景画像*/
+    /*background-image: url(../image/bg-01.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;*/
+    /*色のみ背景*/
+    background: linear-gradient(to left, paleturquoise, honeydew);
+}
+
+/*メイン画面で表示の投稿記事画像*/
+/*投稿画像のサイズ*/
+.size {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    /*box-shadow: 3px 3px 10px black;*/
+    padding: 10px;
+}
+
+    .size:hover {
+        /*画像の影*/
+        box-shadow: 10px 5px 5px;
+        /*画像の動く位置*/
+        /* transform: translate(-4px);*/
+        transition: 1s;
+        border-radius: 36px;
+        color: #696969;
+        border: solid;
+    }
+
+
+
+/*メインの投稿画像*/
+/*一段目*/
+.item2 {
+    width: 26%;
+    height: 400px;
+    /*background: #3D9FB1;*/
+    margin-bottom: 2%;
+    margin-top: 2%;
+    /*opacity:0;
+            transform:translateY(-10px);
+            transition:3s;*/
+}
+
+
+/*メインの投稿画像*/
+/*2段目スクロール時表示*/
+.item {
+    width: 26%;
+    height: 400px;
+    /*background: #3D9FB1;*/
+    margin-bottom: 2%;
+    margin-top: 2%;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 10s;
+}
+
+    .item.show {
+        opacity: 1;
+        transform: none;
+    }
+
+
+.items {
+    /*background-color: #aae4ff;*/
+    display: flex;
+    justify-content: center;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 50px
+}
+
+    /*メインの投稿画像2列目*/
+    .items:after {
+        content: "";
+        display: block;
+        width: 32%;
+        height: 0;
+    }
+
+/*各記事画面*/
+h3 {
+    /*border-bottom: solid 4px #01bd5a;*/
+    /*border-bottom: solid 1px#000000;*/
+    font-family: 'fantasy';
+    border-bottom: solid 4px #696969;
+    border-bottom-right-radius: 15px 15px;
+    border-bottom-left-radius: 15px 15px;
+    margin-top: 50px;
+}
+/*投稿画像*/
+.article1 {
+    width: 800px;
+    height: 400px;
+}
+
+.article_item {
+    width: 800px;
+    margin: auto;
+}
+
+/*入力チェック*/
+.form-invalid {
+    color: #f50000;
+    /*font-size: 18px;*/
+    padding: 10px;
+    /*background-color: #ffd9e1;*/
+}
+
+.input-invalid {
+    border: 1px solid #f50000;
+    background-color: #ffd9e1;
+    width: 400px;
+    height: 30px;
+    border-radius: 9px;
+    padding: 2px 30px;
+}
+
+/*パスワードの表示アイコン*/
+.fas {
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 30px;
+    top: 6px;
+}
+
+/*パスワードの表示アイコンの位置*/
+.icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.cp_iptxt {
+    position: relative;
+}
+
+    .cp_iptxt i {
+        position: absolute;
+        left: 1px;
+        padding: 9px 8px;
+        color: #aaaaaa;
+    }
+
+
+
+/*ログインユーザのアイコンの位置*/
+.right {
+    display: inline-block;
+    color: #ec571e;
+    position: relative;
+    /* top: 0px; */
+    left: 5px;
+}
+/*ログインユーザのアイコンの位置*/
+.S_Id {
+    color: #ec571e;
+    position: relative;
+    /* top: 0px; */
+    left: 15px;
+}
+/*ログアウトボタンのデザイン*/
+.logauto_button {
+    background-color: #ffffff;
+    color: #00bfff;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #68779a;
+    transition: 1s;
+    border: none;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+    /*ログアウトボタンのデザイン*/
+    .logauto_button:hover {
+        /*ボタンの影*/
+        box-shadow: 10px 5px 5px;
+        /*ボタンの動く位置*/
+        transform: translate(-4px);
+        transition: 1s;
+        border-radius: 36px;
+        color: #00bfff;
+        border: solid;
+        text-decoration: none;
+    }
+
+.S_Id_right {
+    position: relative;
+    /* top: 0px; */
+    left: 15px;
+    color:darkgray
+}
+
+/*エラーメッセージ*/
+
+
+/*吹き出しレイアウト*/
+.balloon {
+    position: absolute;
+    background-color: #ffc4c4;
+    padding: 10px;
+    color: #333;
+    border-radius: 10px;
+    /*margin-left: 800px;*/
+    /*margin-right: 650px;*/
+    margin-top: 200px;
+    width: 26%;
+}
+
+    .balloon::before {
+        content: "";
+        /*position: absolute;
+        border: 12px solid transparent;
+        border-top: 12px solid #ffc4c4;
+        top: 100%;
+        left: 5%;*/
+    }
+
+/*アカウント編集画面*/
+.Overall_account {
+    text-align: center;
+    margin: 40px auto;
+    width: 600px;
+    padding: 10px 60px 35px;
+    border: 1px solid #222222;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 3px 3px 10px black;
+    margin-top: 5%;
+}
+
+.Overall_article {
+    text-align: center;
+    margin: 40px auto;
+    width: 600px;
+    padding: 10px 60px 35px;
+    border: 1px solid #222222;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 3px 3px 10px black;
+    margin-top: 5%;
+}
+
+/*アカウント登録完了画面のレイアウト*/
+.completion {
+    text-align: center;
+    margin: 40px auto;
+    width: 600px;
+    height: 400px;
+    padding: 100px 0px 0px 0px;
+    border: 1px solid #222222;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 3px 3px 10px black;
+    margin-top: 4%;
+    background-color: #f0fff5;
+}
+
+h4 {
+    text-shadow: 1px 1px 1px #f0f6f8, 1px -1px 1px #f5f5f5, -1px 1px 1px #f5f5f5, 1px 1px 1px #f5f5f5;
+    font-size: 36px;
+}
+
+
+*{
+    box-sizing: border-box;
+    width: auto;
+  }
+  

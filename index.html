@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+
+
+</head>
+
+
+<body>
+
+    <header>
+        <h1>～みんなの掲示板～</h1>
+        <nav class="pc-nav">
+            <ul class="menu_list">
+                <!-- <li><a href="#From_New_Registration" onclick="New_Link_Ckick()">新規登録</a></li> -->
+                <!-- <li data-menu="1"><input type="button" value="新規登録" onclick="menu_list()" /></li> -->
+                <!-- <li data-menu="2"><input type="button" value="ログイン" onclick="menu_list()" /></li> -->
+                <!-- <li data-menu="4"><input type="button" value="アカウント編集" onclick="menu_list()" /></li> -->
+                <li data-menu="5"><input type="button" value="掲示板TOP" onclick="menu_list()" /></li>
+                <li data-menu="6"><input type="button" value="掲示投稿" onclick="menu_list()" /></li>
+                <!-- <li data-menu="3"><input type="button" id="logout" value="ログアウト" onclick="menu_list()" /></li> -->
+                <!--<li data-menu="7"><input type="button" value="記事の詳細"-->  <!--/></li>-->
+            </ul>
+        </nav>
+
+        <div class="S_Id_right" id="logauto_Id">
+            <i class="fa fa-user fa-lg fa-fw"></i>
+        </div>
+        <!--<ユーザのID表示-->
+    <div class="S_Id" id="S_U_Id" style="display:none">
+        <i class="fa fa-user fa-lg fa-fw"></i>
+        <a class="fa fa-user fa-lg fa-fw" onclick=""></a>
+        ログインID:<label class="right" id="SettionId"></label>
+        <a href="" class="logauto_button" onclick="menu_list()">ログアウト</a>
+    </div>
+        <!-- エラーメッセージ -->
+        <div class="balloon" id="balloon_id" style="display:none">
+            <!-- エラーメッセージラベル共通 -->
+            <label class="example" id="Message" style="color:red"></label>
+        </div>
+    </header>
+
+
+    <!-- 新規登録画面 -->
+    <div class="Inputtext">
+    <!-- 個人情報やパスワードなどを入力する場合はPOSTを使う　→　method="post" -->
+    <form id="From_New_Registration" method="post" style="display: none ">
+        <div class="Overall">
+            <h2>新規登録</h2>
+            <div class="flame_item">
+                <dl>
+                    <dt>お名前</dt>
+                    <div class="err-msg-name"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="fa fa-user fa-lg fa-fw"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="text" id="" name="new_username" maxlength="100" placeholder="田中太郎">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>ログインID</dt>
+                    <div class="err-msg-login"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="far fa-id-card"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="text" id="" name="new_login_id" maxlength="8" placeholder="あAいBう12345">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>パスワード</dt>
+                    <div class="err-msg-pass"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="password" id="new_password" name="new_password" maxlength="8" placeholder="あAいBう12345">
+                        <span class="icon">
+                            <i id="buttonEye" class="fas fa-eye"></i>
+                        </span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>パスワード(確認)</dt>
+                    <div class="err-msg-passagain"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="password" id="again_password" name="again_password" maxlength="8" placeholder="あAいBう12345">
+                        <span class="icon">
+                            <i id="rebuttonEye" class="fas fa-eye"></i>
+                        </span>
+                    </dd>
+                </dl>
+                <input type="submit" id="New_Registration" name="New_Registration" value="新規登録" />
+                <br>
+            </div>
+        </div>
+    </form>
+    </div>
+
+
+
+    <!-- ログイン画面 -->
+    <!-- <div class="Inputtext"> -->
+        <!-- <form id="Login" method="post" style="display: none">
+            <div class="Overall"> -->
+                <!-- エラーメッセージラベル共通 -->
+                <!-- <label id="Message" style="color:red"></label>
+                <h2>ログイン</h2>
+                <div class="flame_item">
+                    <dl>
+                        <div class="login_err_msg_pass"></div>
+                        <dd>
+                            <span class="cp_iptxt">
+                                <i class="far fa-id-card"></i>
+                            </span> -->
+                            <!-- nameはサーバ側へ渡す値 -->
+                            <!-- <input type="text" name="LoginID" id="LoginID"  placeholder="ログインID">
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <span class="cp_iptxt">
+                                <i class="fa fa-key"></i>
+                            </span> -->
+                            <!-- nameはサーバ側へ渡す値 -->
+                            <!-- <input type="text" name="PassWord" id="PassWord"  placeholder="パスワード">
+                            <span class="icon">
+                                <i id="rerebuttonEye" class="fas fa-eye"></i>
+                            </span>
+                        </dd>
+                    </dl>
+                    <input type="submit" name="Send_LoginID_PassWord" id="Send_LoginID_PassWord" value="ログイン"  />
+                </div>
+            </div>
+        </form> -->
+    <!-- </div> -->
+
+    <!-- 新規登録完了画面 -->
+<div class="completion" id="completion_id" style="display: none">
+    <h4>ようこそ、みんなの掲示板へ！！</h4>
+    <h4>アカウント登録完了です</h4>
+</div>
+
+    <div class="account_Inputtext">
+    <!-- 編集画面(アカウント編集) -->
+    <form id="account_edit" method="post" style="display: none"> 
+        <div class="Overall_account">
+            <h2>アカウント編集</h2>
+            <div class="flame_item">
+                <dl>
+                    <dt>お名前</dt>
+                    <div class="err-msg-name"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="fa fa-user fa-lg fa-fw"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="text" id="" name="new_username" maxlength="100" placeholder="田中太郎">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>ログインID</dt>
+                    <div class="err-msg-login"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="far fa-id-card"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="text" id="" name="new_login_id" maxlength="8" placeholder="あAいBう12345">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>パスワード</dt>
+                    <div class="err-msg-pass"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="password" id="" name="new_password" maxlength="8" placeholder="あAいBう12345">
+                        <span class="icon">
+                            <i id="buttonEye" class="fas fa-eye"></i>
+                        </span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>パスワード(確認)</dt>
+                    <div class="err-msg-passagain"></div>
+                    <dd>
+                        <span class="cp_iptxt">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <!-- nameはサーバ側へ渡す値 -->
+                        <input type="password" id="" name="again_password" maxlength="8" placeholder="あAいBう12345">
+                        <span class="icon">
+                            <i id="rebuttonEye" class="fas fa-eye"></i>
+                        </span>
+                    </dd>
+                </dl>
+                <input type="submit" id="" name="New_Registration" value="変更内容の保存" />
+            </div>
+            <div>
+                <!-- ユーザのセッションIDのセットとサーバ側への送信、「style="visibility:hidden"」で非表示 -->
+                <input type="text" id="Settion_Id" name="Settion_Id" value="" style="visibility:hidden" />
+            </div>
+        </div>
+    </form>
+   </div>
+
+    <!-- 掲示板TOP画面 -->
+<div class="Inputtext">
+    <form id="grid" method="post" style="display: block">
+
+        <div class="grid" >
+        <div class="items">
+            <div class="item2">
+                <p>タイトル</p>
+                <img src="Image/bb-01.jpg" class="size" data-image="../Image/bb-01.jpg">
+            </div>
+            <div class="item2">
+                <p>タイトル</p>
+                <img src="Image/bb-02.jpg" class="size" data-image="../Image/bb-02.jpg">
+            </div>
+            <div class="item2">
+                <p>タイトル</p>
+                <img src="Image/bb-03.jpg" class="size" data-image="../Image/bb-03.jpg">
+            </div>
+            <div class="item">
+                <p>タイトル</p>
+                <img src="Image/bb-04.jpg" class="size" data-image="../Image/bb-04.jpg">
+            </div>
+            <div class="item">
+                <p>タイトル</p>
+                <img src="Image/bb-05.jpg" class="size" data-image="../Image/bb-05.jpg">
+            </div>
+            <div class="item">
+                <p>タイトル</p>
+                <img src="Image/bb-06.jpg" class="size" data-image="../Image/bb-06.jpg">
+            </div>
+            <div class="item">
+                <p>タイトル</p>
+                <img src="Image/bb-07.jpg" class="size" data-image="../Image/bb-07.jpg">
+            </div>
+            <div class="item">
+                <p>タイトル</p>
+                <img src="Image/bb-08.jpg" class="size" data-image="../Image/bb-08.jpg">
+            </div>
+            <div class="item">
+                <p>タイトル</p>
+                <img src="Image/bb-09.jpg" class="size" data-image="../Image/bb-09.jpg">
+            </div>
+        </div>
+        </div>
+    </form>
+</div>
+        <!-- 記事投稿画面
+        投稿に必要なもの
+            ①名前
+            ②タイトル
+            ③内容
+            ④投稿ボタン -->
+            <form id="article_post" method="post" style="display: none">
+                <div class="Overall_article">
+                    <h2>記事の投稿</h2>
+                    <div class="flame_item">
+                        <dl>
+                            <!-- タイトル -->
+                            <dt>タイトル</dt>
+                            <dd><input type="text" name="TITLE" placeholder="タイトルは必須です" size="50"></dd>
+
+                            <!-- 記事
+                            投稿=contribution -->
+                            <dt>投稿内容</dt>
+                            <dd><textarea name="contribution" ></textarea></dd>
+                        </dl>
+                        <input type="button" name="" value="記事の投稿" />
+                    </div>
+                </div>
+            </form>
+        <!-- 記事の詳細画面 -->
+        <form id="detail_article_post" method="post" style="display: none">
+
+            <div class="article_item">
+
+                <div>
+                    <h3>
+                        「人事部は受け身ではいけない。一番の営業マンでないといけない」
+                    </h3>
+                </div>
+                <img src="" class="article1" id="article-img">
+                <div>
+                    <h3>
+                        私は学生時代から未来ガ驚喜研究所でアルバイトをしていたのですが、その時から「なんでこの会社はこんなにいい人しかいないのかな？」と思っていました。「それはきっと、会社の入口＝採用に謎があるんじゃないか」と。だから、採用面接で希望の部署を聞かれた時もすぐに「人事をやってみたいです」と答えました。その答えはまだ明確になっていませんが、確実に言えるのは、会社は採用する人の能力や資質だけでなく“未来”にも投資しているということです。今何が出来るか、よりも、今後何かが起こった時にどんなふうに取り組めるか。そういう意味では未来ガ驚喜研究所で働くスタッフは“当事者意識”というのをみんな持っているかもしれません。仕事はもちろん、自分の人生に対してもそうです。仕事って人生の大半を占めるものなので、それに対してどれだけ主体的になれるかというのは、自分の人生をどれだけ楽しく出来るかということに繋がってくる気がします。
+
+                        人事は会社の“人格”を決めていく仕事
+
+                        今は新卒採用をメインで担当していますが、これまでは大手の就職WEBサイトを利用して募集をしていたのですが、時間や手間がかかっても、自分たちで探してひとりひとり会っていく方が私たちらしいのでは？ と思い、学生の方にお会いしながら弊社に合いそうな方を地道に発掘する活動を続けています。
+                        人事の仕事は、人ひとりの人生を左右する仕事ですが、それと同時に、会社という生き物の人生、“人格”のようなものを決めていく仕事だと思っています。会社を作っていくのは採用した“人”ですからね。
+                    </h3>
+                </div>
+
+                <div class="items">
+                    <div class="item">
+                        <img src="../Image/bb-01.jpg" class="size" data-image="../Image/bb-01.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="../Image/bb-02.jpg" class="size" data-image="../Image/bb-02.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="../Image/bb-03.jpg" class="size" data-image="../Image/bb-03.jpg">
+                    </div>
+                </div>
+            </div>
+        </form>
+</body>
+
+<script src="Bulletin.js"></script>
+</html>
+
